@@ -1,0 +1,48 @@
+.about {
+  background-color: #12141d;
+  padding: 20px;
+
+}
+.container-about {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+}
+.about-text {
+  line-height: 1.8;
+}
+.about-text h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #536493 ; /* Orange vibrant */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase; /* Mise en majuscules */
+}
+.quote {
+  font-style: italic;
+  color: white;
+  font-size: 1.1rem;
+}
+/* Style spécifique pour la localisation */
+.about-text strong {
+  color: #a8a8a8; /* Met en valeur Ghar El Melh */
+}
+.container-about img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@media (max-width: 768px) {
+  .container-about {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+span {
+  margin: auto;
+  font-size: 2rem;
+}

@@ -1,0 +1,47 @@
+<section class="reservation-section">
+  <h2 class="reservation-title">Réservez maintenant</h2>
+  <p class="reservation-subtitle">
+    Envie de savourer vos plats préférés dans un cadre exceptionnel ? Réservez
+    dès aujourd'hui votre table entre sable fin et brise marine, et laissez-nous
+    vous offrir une expérience culinaire rapide, personnalisée et inoubliable.
+  </p>
+
+  <form class="reservation-form">
+    <div class="form-group">
+      <label for="name">Nom complet</label>
+      <input type="text" id="name" placeholder="Entrez votre nom" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Entrez votre email"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="phone">Téléphone</label>
+      <input
+        type="tel"
+        id="phone"
+        placeholder="Entrez votre numéro de téléphone"
+        required
+      />
+    </div>
+    <div class="form-group">
+        <label for="adults">Nombre d'adultes :</label>
+        <input type="number" id="adults" name="adults" min="1" placeholder="Ex. 2" required />
+      </div>
+      <div class="form-group">
+        <label for="children">Nombre d'enfants :</label>
+        <input type="number" id="children" name="children" min="0" placeholder="Ex. 1" />
+      </div>
+    <div class="form-group">
+      <label for="date">Date de réservation</label>
+      <input type="date" id="date" required />
+    </div>
+   
+    <button type="submit" class="reservation-button">Réserver</button>
+  </form>
+</section>

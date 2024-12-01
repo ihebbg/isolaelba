@@ -1,0 +1,73 @@
+/* Visitor Reviews Section */
+.visitor-reviews {
+  background: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+.reviews-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.reviews-title {
+  font-size: 28px;
+  color: #536493;
+  display: inline;
+}
+.reviews-subtitle {
+  font-size: 15px;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.reviews-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.review-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.reviewer-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+.reviewer-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+}
+.reviewer-stars {
+  color: #ff9800;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+.reviewer-comment {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .reviews-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

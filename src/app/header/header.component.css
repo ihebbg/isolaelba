@@ -1,0 +1,157 @@
+/* Navbar styles */
+.navbar {
+  background: #f8f8f8;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: rgb(80 80 80 / 80%) 0px 5px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Header layout */
+.header {
+  height: 50px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Desktop menu items */
+.items {
+  display: flex;
+  gap: 20px;
+}
+
+.item-menu {
+  color: black;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 5px ;
+  border-radius: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 600;
+}
+
+.item-menu:hover {
+  background: #f96e2a;
+  color: white;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  text-decoration: none;
+
+}
+a{
+  text-decoration: none;
+}
+
+.social-icons .icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons .icon:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+/* Hamburger menu for mobile */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger img {
+  width: 30px;
+  height: auto;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100vh;
+  background: rgb(18, 20, 29);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.open {
+  display: flex;
+  transform: translateX(0);
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.mobile-item-menu {
+  color: #f96e2a!important;
+  font-size: 20px;
+  padding: 15px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  margin: 10px 0;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Mobile animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.open {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+  .items {
+    display: none; /* Hide desktop menu */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+}

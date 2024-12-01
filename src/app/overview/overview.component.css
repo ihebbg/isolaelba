@@ -1,0 +1,169 @@
+.overview {
+  background: #f8f8f8;
+  padding: 100px;
+}
+.overview-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+/* Slogan Styling */
+.slogan h1 {
+  letter-spacing: 0.5px;
+  font-size: 45px;
+  color: #f96e2a; /* Vibrant orange */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  animation: fadeInDown 1s ease-in-out;
+}
+.slogan h2 {
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  color: #12141d;
+  font-weight: 600;
+  margin-top: 10px;
+  text-shadow: 1px 1px 1px rgb(136 136 136 / 40%);
+  animation: fadeIn 1.5s ease-in-out;
+}
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Style du bouton */
+.btn-reservation {
+  background-color: #f8f8f8;
+  color: #f96e2a;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #f96e2a;
+  font-style: italic;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0; 
+}
+/* Effet au survol */
+.btn-reservation:hover {
+  color: white;
+  background-color: #f96e2a; /* Orange plus foncé */
+  transform: scale(1.05); /* Légère animation de zoom */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery {
+  --d: 10s; /* Duration */
+  display: grid;
+  width: 15%;
+  position: relative;
+  margin: auto;
+}
+.gallery > img {
+  grid-area: 1/1;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 10px solid #f2f2f2;
+  box-shadow: 0 0 4px #0007;
+  z-index: 2;
+  animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
+}
+/* Specific delay for each image */
+.gallery > img:nth-child(1) {
+  animation-delay: 0s;
+  --r: -10deg;
+}
+.gallery > img:nth-child(2) {
+  animation-delay: calc(-1 * var(--d) / 5);
+  --r: 5deg;
+}
+.gallery > img:nth-child(3) {
+  animation-delay: calc(-2 * var(--d) / 5);
+  --r: 15deg;
+}
+.gallery > img:nth-child(4) {
+  animation-delay: calc(-3 * var(--d) / 5);
+  --r: -5deg;
+}
+.gallery > img:nth-child(5) {
+  animation-delay: calc(-4 * var(--d) / 5);
+  --r: 10deg;
+}
+/* Animations */
+@keyframes slide {
+  20% {
+    transform: translateX(120%) rotate(var(--r));
+  }
+  0%,
+  100% {
+    transform: translateX(0%) rotate(var(--r));
+  }
+}
+@keyframes z-order {
+  20% {
+    z-index: 1;
+  }
+  0%,
+  100% {
+    z-index: 2;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive Styling */
+@media (max-width: 768px) {
+  /* Adjust overview-container for mobile */
+  .overview-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  /* Adjust gallery for mobile */
+  .gallery {
+    margin-top: 20px;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 50px;
+  }
+  .gallery > img {
+    width: 120px;
+    height: 120px;
+  }
+  /* Adjust slogan text */
+  .slogan h1 {
+    font-size: 30px; /* Reduce font size for mobile */
+  }
+  .slogan h2 {
+    font-size: 16px; /* Reduce font size for mobile */
+  }
+
+}
