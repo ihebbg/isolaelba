@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 .carousel__face {
   transition: transform 0.5s ease-in-out;
 }
@@ -48,16 +48,15 @@
   transform: rotateY(320deg) translateZ(430px);
 
    }
-</style>
+</style> -->
 <section class="overview">
   <div class="overview-container">
     <div class="slogan">
       <h1>Restaurant & Lounge ISOLA D'ELBA</h1>
       <h2>Un coin de paradis, où chaque instant devient inoubliable.</h2>
-      <br />
       <button class="btn-reservation">Réserver maintenant !</button>
     </div>
-    <div class="gallery">
+    <!-- <div class="gallery">
       <img src="images/overview/1-overview.jpg" alt="Image 1">
       <img src="images/overview/2-overview.jpg" alt="Image 2">
       <img src="images/overview/3-overview.jpg" alt="Image 3">
@@ -65,7 +64,29 @@
       <img src="images/overview/5-overview.jpg" alt="Image 5">
   
 
-    </div>
-   
+    </div> -->
+ 
   </div>
+  <br>
+  <div class="gallery-container">
+    <div class="gallery-grid">
+      <div 
+        class="gallery-item" 
+        *ngFor="let image of images; let i = index" 
+        (click)="openPreview(i)">
+        <img [src]="image" alt="Gallery Image {{ i }}" />
+      </div>
+    </div>
+  
+    <!-- Modal Preview -->
+    <div class="gallery-preview" *ngIf="isPreviewOpen">
+      <div class="preview-overlay" (click)="closePreview()"></div>
+      <div class="preview-content">
+        <img [src]="images[selectedImageIndex]" alt="Preview Image" />
+        <button class="btn-close" (click)="closePreview()">Fermer</button>
+      </div>
+    </div>
+  </div>
+  
 </section>
+
